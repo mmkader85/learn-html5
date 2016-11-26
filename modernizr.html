@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modernizr</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript" src="js/modernizr-custom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    </head>
+    <body>
+        <div>
+            Does this browser support localstorage? <span id="localstorage_support">Cannot determine</span> <br />
+            Does this browser support geolocation? <span id="geolocation_support">Cannot determine</span> <br />
+            Does this browser support canvas? <span id="canvas_support">Cannot determine</span> <br />
+            Does this browser support date? <span id="date_support">Cannot determine</span> <br />
+            Does this browser support placeholder? <span id="placeholder_support">Cannot determine</span> <br />
+            <script type="text/javascript">
+                if (Modernizr) {                    
+                    if (Modernizr.localstorage) {
+                        $('#localstorage_support').html('Yes');
+                    }
+                    else {
+                        $('#localstorage_support').html('No');
+                    }
+                    
+                    if (Modernizr.geolocation) {
+                        $('#geolocation_support').html('Yes');
+                    }
+                    else {
+                        $('#geolocation_support').html('No');
+                    }
+                    
+                    if (Modernizr.canvas) {
+                        $('#canvas_support').html('Yes');
+                    }
+                    else {
+                        $('#canvas_support').html('No');
+                    }
+                    
+                    if (Modernizr.date) {
+                        $('#date_support').html('Yes');
+                    }
+                    else {
+                        $('#date_support').html('No');
+                    }
+                    
+                    if (Modernizr.input.placeholder) {
+                        $('#placeholder_support').html('Yes');
+                    }
+                    else {
+                        $('#placeholder_support').html('No');
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Font & Text</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            * {
+                font: bold 12px/150% verdana, Georgia;
+                margin: 5px;
+                padding: 5px;
+            }
+            
+            p {
+                width: 200px;
+                border: 1px solid blueviolet;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bodyContainer">
+            CSS3 Font
+            <style type="text/css">
+                @font-face {
+                    font-family: Muhammed;
+                    src: url('fonts/Exo-Regular.otf');
+                }
+                
+                p.webFont {
+                    font: 16px Muhammed;
+                    width: 400px;
+                }
+            </style>
+            <p class="webFont">
+                This is web font and served from server. Client's machine doesn't need to have it.
+            </p>
+            CSS3 Text
+            <style type="text/css">
+                p.leftContainer {
+                    word-break: break-all;
+                }
+            </style>
+            <p class="leftContainer">
+                This is a child span of div with no class. {div > span, div span} will match. It is break-all.
+                This is a child span of div with no class. {div > span, div span} will match. It is break-all.
+            </p>
+            <style type="text/css">
+                p.middleContainer {
+                    word-break: keep-all;
+                }
+            </style>
+            <p class="middleContainer">
+                This is a child span of div with no class. {div > span, div span} will match. It is keep-all.
+                This is a child span of div with no class. {div > span, div span} will match. It is keep-all.
+            </p>
+            <style type="text/css">
+                p.rightContainer {
+                    word-break: normal;
+                }
+            </style>
+            <p class="rightContainer">
+                This is a child span of div with no class. {div > span, div span} will match. It is normal.
+                This is a child span of div with no class. {div > span, div span} will match. It is normal.
+            </p>
+            <style type="text/css">
+                p.forthContainer {
+                    word-spacing: 15px;
+                }
+            </style>
+            <p class="forthContainer">
+                This is a child span of div with no class. {div > span, div span} will match. It is normal.
+                This is a child span of div with no class. {div > span, div span} will match. It is normal.
+            </p>
+            <style type="text/css">
+                p.fifthContainer {
+                    white-space: nowrap; 
+                    text-overflow: clip;
+                    overflow: hidden;
+                }
+            </style>
+            <p class="fifthContainer">
+                This is a child span of div with no class. {div > span, div span} will match. It is normal.
+                This is a child span of div with no class. {div > span, div span} will match. It is normal.
+            </p>
+            <style type="text/css">
+                p.sixthContainer {
+                    white-space: nowrap; 
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            </style>
+            <p class="sixthContainer">
+                This is a child span of div with no class. {div > span, div span} will match. It is normal.
+                This is a child span of div with no class. {div > span, div span} will match. It is normal.
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Animation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            * {
+                font: bold 12px/150% verdana, Georgia;
+                margin: 5px;
+                padding: 5px;
+            }
+            
+            div, span {
+                border: 2px solid darkorchid;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bodyContainer">
+            CSS3 Animation using @keyframes
+            <style type="text/css">
+                @keyframes animation {
+                    from { background-color: green; width:250px; }
+                    to { background-color: bisque; width:500px; }
+                }
+                .leftContainer {
+                    width: 500px;
+                    padding: 40px;
+                    animation-name: animation;
+                    animation-duration: 2s;
+                    animation-iteration-count: 1;
+                }
+                
+                @keyframes increase-width {
+                    from { width: 200px; }
+                    to { width: 400px; }
+                }
+                
+                input[type=search] {
+                    width: 200px;
+                }
+                
+                input[type=search]:focus {
+                    animation-name: increase-width;
+                    animation-duration: 2s;
+                    animation-iteration-count: 1;
+                    width: 400px;
+                }
+            </style>
+            <div class="leftContainer">
+                This is Right Div Container <br />
+                <span>This is a child span with class</span><br />
+                <input type="search" name="search" placeholder="enter search keyword" />
+            </div>
+            <br /><br />
+        </div>
+    </body>
+</html>

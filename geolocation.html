@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Geo Location</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/modernizr-custom.js"></script>
+        <script type="text/javascript">
+            function __showinmap() 
+            {
+                if (Modernizr.geolocation) {
+                    positionOptionObjects = {enableHighAccuracy: true, timeout: 10000, maximumAge: 30000}
+                    navigator.geolocation.getCurrentPosition(mapcallback, errorhandler, positionOptionObjects);
+                }
+                else {
+                    alert ('Geo location not supported in your browser!');
+                }
+            }
+            
+            function mapcallback(position)
+            {
+                lat = position.coords.latitude;
+                long = position.coords.longitude;
+                accuracy = position.coords.accuracy;
+                time = position.timestamp;
+                document.getElementById('google_map_static').src = 'https://maps.googleapis.com/maps/api/staticmap?center='+lat+','+long+'&zoom=15&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:A%7C'+lat+','+long;
+            }
+            
+            function errorhandler(err)
+            {
+                alert ('Code : '+err.code+'\n'+'Message : '+err.message);
+            }
+        </script>
+    </head>
+    <body>
+        <button type="button" onclick="__showinmap()">Show my location in map</button><br /><br />
+        <img id="google_map_static" src="https://maps.googleapis.com/maps/api/staticmap?center=Singapore&zoom=13&size=600x300&maptype=roadmap" />
+    </body>
+</html>

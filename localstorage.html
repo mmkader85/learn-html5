@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Local Storage</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript" src="js/modernizr-custom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    </head>
+    <body>
+        <pre>
+            Name : <span id='spanName'>&nbsp;</span>
+            Email : <span id='spanEmail'>&nbsp;</span>
+        </pre>
+        <script type="text/javascript">
+            if (Modernizr.localstorage) {
+                userData = {name:'Muhammed', email:'user@gmail.com'};
+                localStorage.setItem('userData', JSON.stringify(userData)); 
+                storedUserData = JSON.parse(localStorage.getItem('userData'));
+                $('#spanName').text(storedUserData.name);
+                $('#spanEmail').text(storedUserData.email);
+            }
+            else {
+                alert('your browser doesn\'t support localstorage');
+            }
+        </script>
+    </body>
+</html>

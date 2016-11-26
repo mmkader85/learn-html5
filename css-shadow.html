@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Shadow</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            * {
+                font: bold 12px/150% verdana, Georgia;
+                margin: 5px;
+                padding: 5px;
+            }
+            div, span {
+                border: 2px solid darkorchid;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bodyContainer">
+            CSS3 Shadow
+            <style type="text/css">
+                .leftContainer {
+                    width: 300px;
+                    background-color: bisque;
+                    box-shadow: 10px 5px;
+                }
+            </style>
+            <div class="leftContainer">
+                <span>  
+                    This is a child span of div with no class. {div > span, div span} will match
+                </span>
+            </div>
+            <br /><br />
+            <style type="text/css">
+                .rightContainer {
+                    text-shadow: 10px 10px bisque;
+                }
+            </style>
+            <div class="rightContainer">
+                This is Right Div Container <br />
+                <span>This is a child span with class</span><br />
+            </div>
+        </div>
+    </body>
+</html>

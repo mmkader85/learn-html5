@@ -1,0 +1,7 @@
+CACHE MANIFEST
+CACHE:
+/css/html5.css
+FALLBACK:
+/ /offlinefallback.html
+NETWORK:
+*

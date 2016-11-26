@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Responsive Layout</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=true">
+        <style type="text/css">
+            body {
+                color: #FFF;
+            }
+            h3 {
+                margin: 5px auto;
+            }
+            .container, section, aside{
+                border-radius: 6px;
+            }
+            .container {
+                margin-bottom: 12px;
+                background: #eaeaed;
+            }
+            .container:before,
+            .container:after {
+                content: "";
+                display: table;
+            }
+            .container:after {
+                clear: both;
+            }
+            section, aside {
+                margin: 1.858736059%; /* 10px ÷ 538px = .018587361 */
+                padding: 20px 0;
+                background: #2db34a;
+                text-align: center;
+            }
+            section {
+                float: none;
+                width: auto;
+            }
+            aside {
+                float: none;
+                width: auto;
+            }
+
+            @media all and (min-width: 420px) {
+                .container {
+                    width: 538px;
+                }
+                .container-75 {
+                    width: 75%;
+                }
+                .container-50 {
+                    margin-bottom: 0;
+                    width: 50%;
+                }
+                section {
+                    float: left;
+                    width: 63.197026%;    /* 340px ÷ 538px = .63197026 */ 
+                }
+                aside {
+                    float: right;
+                    width: 29.3680297%;   /* 158px ÷ 538px = .293680297 */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h3>100% Wide Container</h3>
+
+        <div class="container">
+            <section>Section</section>
+            <aside>Aside</aside>
+        </div>
+
+        <h3>75% Wide Container</h3>
+
+        <div class="container container-75">
+            <section>Section</section>
+            <aside>Aside</aside>
+        </div>
+
+        <h3>50% Wide Container</h3>
+
+        <div class="container container-50">
+            <section>Section</section>
+            <aside>Aside</aside>
+        </div>
+    </body>
+</html>
