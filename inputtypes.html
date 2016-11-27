@@ -4,16 +4,26 @@
         <title>New input types in HTML5</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            input:valid { color: green; }
+            input:invalid { color: red; }
+        </style>
     </head>
     <body>
         <div>New input types in HTML5</div>
+        <datalist id="country-list">
+            <option value="IN">India</option>
+            <option value="SG">Singapore</option>
+            <option value="MY">Malaysia</option>
+        </datalist>
         <form method="GET" action="">
             <pre>
                 Search          <input type="search" name="search" autofocus /><br />
                 Number          <input type="number" name="number" min="10" max="50" step="4" /><br />
                 Range           <input type="range" name="range" min="1" max="10" step="1" value="6" /><br />
                 Color           <input type="color" name="color" /><br />
-                Tel             <input type="tel" name="tel" /><br />
+                Tel             <input type="tel" name="tel" pattern="^[+]?[0-9-()]{6,20}$"
+                                       title="Should be a number between 6 and 20 digits" /><br />
                 URL             <input type="url" name="url" /><br />
                 Email           <input type="email" name="email"  placeholder="Enter your email" required /><br />
                 Date            <input type="date" name="date" /><br />
@@ -22,6 +32,8 @@
                 DateTimeLocal   <input type="datetime-local" name="datetime-local" /><br />    
                 Week            <input type="week" name="week" /><br />
                 Month           <input type="month" name="month" /><br />
+                Dropdown        <input type="text" name="country" list="country-list" />
+                                <br />
                                 <input type="submit" value="Submit" /><br />
             </pre>
         </form>

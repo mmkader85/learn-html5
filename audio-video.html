@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio and Video controls</title>
+    <script type="text/javascript">
+        function audioPassed (audioElement) {
+            console.log('Audio is paused at ' + audioElement.currentTime);
+        }
+
+        function audioPlayed(audioElement) {
+            audioElement.volume = 0.1;
+            console.log('Playing audio ' + audioElement.currentSrc);
+        }
+    </script>
+</head>
+<body>
+    <audio controls autoplay onplay="audioPlayed(this)" onpause="audioPassed(this)">
+        <source src="media/adhaan-mecca.mp3" type="audio/mp3" />
+        Your browser does not support the audio tag.
+    </audio>
+
+    <audio controls onplay="audioPlayed(this)" onpause="audioPassed(this)">
+        <source src="media/adhaan-mecca.mp3" />
+        Your browser does not support the audio tag.
+    </audio>
+</body>
+</html>

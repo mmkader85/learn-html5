@@ -1,6 +1,7 @@
 <?php
 
 $dir = __DIR__;
+$time = time();
 // Open a directory, and read its contents
 if (is_dir($dir)) {
     if ($dh = opendir($dir)) {
@@ -9,7 +10,7 @@ if (is_dir($dir)) {
                 || pathinfo($file, PATHINFO_EXTENSION) != 'html') {
                 continue;
             }
-            echo '<a href="'.$file.'" target="output">'.$file.'<br />';
+            echo '<a href="'.$file.'?'.$time.'" target="output">'.$file.'<br />';
         }
         closedir($dh);
     }
